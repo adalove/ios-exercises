@@ -11,7 +11,8 @@
 @implementation SimpleCalculator
 
 - (NSInteger) increaseNumberBy1:(NSInteger) number {
-    /* WORK HERE */
+    NSInteger resultNumber = number++;
+    NSLog(@"The resulting increment is %ld", (long)resultNumber);
     return number;
 }
 
