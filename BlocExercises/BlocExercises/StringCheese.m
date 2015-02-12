@@ -32,18 +32,22 @@
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
-    NSString * cheeseAmount = [NSString stringWithFormat:@"%li cheeses", cheeseCount];
-    if (cheeseCount == 1) {
+    NSString * cheeseAmount;
+
+    if (cheeseCount == 1)
+    {
+         cheeseAmount = [NSString stringWithFormat:@"%lu cheese", cheeseCount];
 //        NSLog(@"%lu cheese", cheeseAmount);
-        NSLog(@"%@ cheese", cheeseAmount);
+//        NSLog(@"%@ cheese", cheeseAmount);
 //        NSMutableString *modifiedCheeseAmount = [cheeseAmount mutableCopy];
 //        NSString *updatedCheeseString = (@"%@", modifiedCheeseAmount);
 //        NSLog(@"%@", updatedCheeseString);
     } else {
-        NSLog(@"%@ cheeses", cheeseAmount);
+        cheeseAmount = [NSString stringWithFormat:@"%lu cheeses", cheeseCount];
+//        NSLog(@"%@ cheeses", cheeseAmount);
 //        NSLog(@"The number of cheeses is %lu", cheeseCount);
 //        NSString * cheeseAmount = [NSString stringWithFormat:@"%li cheeses", cheeseCount];
-//    NSLog(@"%@", cheeseAmount);
+//        NSLog(@"%@", cheeseAmount);
         
     }
 //    if (cheeseCount == 1){
@@ -58,7 +62,7 @@
     /*
      (You will learn more about if/else statements in the next checkpoint.)
      */
-    return @"%@", cheeseAmount;
+    return cheeseAmount;
 }
 
 @end
