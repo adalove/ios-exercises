@@ -17,9 +17,11 @@
     if (number < otherNumber)
     {
         while (number <= otherNumber)
+        {
         [myNewNumber appendFormat:@"%ld", number++];
     
         NSLog(@"the number is now %ld", number);
+        }
     }
     else if (number > otherNumber)
     {
