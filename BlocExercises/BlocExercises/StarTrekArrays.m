@@ -29,8 +29,19 @@
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     NSMutableArray * myMutableCharacterArray = [characterArray mutableCopy];
+    NSLog(@"Our array before filtering it: %@", myMutableCharacterArray);
     NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf'"];
     [myMutableCharacterArray filterUsingPredicate:containsWorf];
+    for (NSString * character in myMutableCharacterArray)
+    {
+        NSLog(@"remaining character: %@", character);
+    }
+    if (myMutableCharacterArray.count == 0)
+    {
+        return NO;
+    }
+ 
+    NSLog(@"Our array AFTER filtering it: %@", myMutableCharacterArray);
     return YES;
 }
 
