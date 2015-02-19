@@ -11,28 +11,27 @@
 @implementation StarTrekArrays
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
-    NSMutableString * starTrekCharacters = [@"Worf, son of Mogh, slayer of Gowron; Captain Jean-Luc Picard of the USS Enterprise; Beverly Crusher, Chief Medical Officer" mutableCopy];
-    NSArray * myStarTrekCharacters = [starTrekCharacters componentsSeparatedByString:@"; "];
-    NSMutableArray *myMutableCharacters = [myStarTrekCharacters mutableCopy];
-//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
-//    [myMutableCharacters sortUsingDescriptors:@[sortDescriptor]];
-  // turn into mutable array with sortdescriptor
-    return myMutableCharacters;
+    NSArray * myStarTrekCharacters = [characterString componentsSeparatedByString:@";"];
+    return myStarTrekCharacters;
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @"";
+    NSString *allTheStarTrekCharacters = [characterArray componentsJoinedByString:@";"];
+    return allTheStarTrekCharacters;
 }
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @[];
+    NSMutableArray *myMutableCharacterArray = [characterArray mutableCopy];
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:(YES) selector:@selector(localizedCaseInsensitiveCompare:)];
+    [myMutableCharacterArray sortUsingDescriptors:@[sortDescriptor]];
+    return myMutableCharacterArray;
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
-    /* WORK HERE */
-    return NO;
+    NSMutableArray * myMutableCharacterArray = [characterArray mutableCopy];
+    NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf'"];
+    [myMutableCharacterArray filterUsingPredicate:containsWorf];
+    return YES;
 }
 
 @end
