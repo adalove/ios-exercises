@@ -11,8 +11,15 @@
 @implementation StarTrekDictionaries
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    /* WORK HERE */
-    return @"";
+    
+//    NSArray * allKeys = [characterDictionary allKeys];
+    NSString * favoriteDrink = characterDictionary[@"favorite drink"];
+//    for (NSString* nextKey in allKeys)
+//    {
+//        NSLog(@"our next key is %@ and the value is: %@", nextKey, [characterDictionary objectForKey:nextKey]);
+//    }
+//    
+    return favoriteDrink;
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
