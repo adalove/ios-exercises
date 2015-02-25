@@ -34,8 +34,10 @@
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    /* WORK HERE */
-    return @{};
+    NSMutableDictionary * resultDictionary = [characterDictionary mutableCopy];
+    [resultDictionary setObject:@("blah blah blah") forKey:@"quote"];
+//    NSString *quote = resultDictionary[@"quote"];
+    return resultDictionary;
 }
 
 @end
