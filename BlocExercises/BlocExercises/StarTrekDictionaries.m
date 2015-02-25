@@ -23,8 +23,14 @@
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
-    /* WORK HERE */
-    return @[];
+    NSMutableArray * myMutableFavoriteDrinksArray = [@[] mutableCopy];
+    for (NSInteger idx = 0; idx < charactersArray.count; idx++) {
+        [myMutableFavoriteDrinksArray addObject:charactersArray[idx][@"favorite drink"]];
+        NSLog(@"the favorite drinks are %@", charactersArray[idx][@"favorite drink"]);
+
+    }
+
+    return myMutableFavoriteDrinksArray;
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
