@@ -47,23 +47,20 @@
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
-    NSNumber * firstNumber = arrayOfNumbers[0];
-    NSNumber * lowestNumber;
+    NSInteger lowestNumber = [arrayOfNumbers[0] integerValue];
     for (NSInteger idx = 0; idx < arrayOfNumbers.count; idx++)
         {
-            if (arrayOfNumbers[idx] < firstNumber)
+            NSInteger nextNumber = [arrayOfNumbers[idx] integerValue];
+            if (nextNumber < lowestNumber)
             {
-                lowestNumber = arrayOfNumbers[idx];
-                NSLog(@"now the lowest number is %@", lowestNumber);
+                lowestNumber = nextNumber;
+                
+                NSLog(@"now the lowest number is %ld", lowestNumber);
             }
-            else if (arrayOfNumbers[idx] >= firstNumber)
-            {
-                lowestNumber = arrayOfNumbers[0];
-            }
+
         }
 
-    int lowerNumber = [lowestNumber intValue];
-    return lowerNumber;
+    return lowestNumber;
 }
 
 - (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
