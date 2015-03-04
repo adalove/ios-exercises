@@ -10,6 +10,11 @@
 
 @interface StuffRememberer : NSObject
 
+@property (nonatomic, strong) NSMutableArray *rememberThis;
+@property (nonatomic, copy) NSMutableArray *rememberThisCopy;
+@property (nonatomic, strong) NSNumber * myObjectFloatToRemember;
+@property (assign) CGFloat myPrimitiveFloatToRemember;
+
 /*
  
  In this class, there are three pairs of methods.
@@ -72,4 +77,6 @@
  */
 - (CGFloat) floatYouShouldRemember;
 
+- (void) rememberThisPrimitiveFloatForLater:(CGFloat)floatToRemember;
+- (CGFloat) primitiveFloatYouShouldRemember;
 @end

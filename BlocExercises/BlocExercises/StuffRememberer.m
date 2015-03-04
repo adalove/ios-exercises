@@ -11,30 +11,39 @@
 @implementation StuffRememberer
 
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
-    /* WORK HERE */
+    self.rememberThis = arrayToRemember;
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
-    /* WORK HERE */
+    self.rememberThisCopy = arrayToCopy;
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
-    /* WORK HERE */
+    NSNumber * myNumberToRemember = [NSNumber numberWithDouble:floatToRemember];
+    self.myObjectFloatToRemember = myNumberToRemember;
+}
+
+- (void) rememberThisPrimitiveFloatForLater:(CGFloat)floatToRemember {
+    self.myPrimitiveFloatToRemember = floatToRemember;
 }
 
 - (NSMutableArray *) arrayYouShouldRemember {
-    /* WORK HERE */
-    return [@[] mutableCopy];
+    
+    return self.rememberThis;
 }
 
 - (NSMutableArray *) arrayYouShouldCopy {
-    /* WORK HERE */
-    return [@[] mutableCopy];
+    return self.rememberThisCopy;
 }
 
 - (CGFloat) floatYouShouldRemember {
-    /* WORK HERE */
-    return 0.0f;
+    CGFloat unpackedFloat = [self.myObjectFloatToRemember doubleValue];
+    return unpackedFloat;
+}
+
+- (CGFloat) primitiveFloatYouShouldRemember {
+    
+    return self.myPrimitiveFloatToRemember;
 }
 
 @end

@@ -57,4 +57,13 @@
     XCTAssertEqual(someFloat, otherFloat, @"The two floats aren't equal.");
 }
 
+- (void)testThatPrimitiveFloatIsRemembered
+{
+    CGFloat someFloat = 3.14159265359;
+    [self.rememberer rememberThisPrimitiveFloatForLater:someFloat];
+    CGFloat otherFloat = [self.rememberer primitiveFloatYouShouldRemember];
+    
+    XCTAssertEqual(someFloat, otherFloat, @"The two floats aren't equal.");
+}
+
 @end
