@@ -7,25 +7,28 @@ Strings
 */
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
-    // WORK HERE
+    let cheese = "cheddar"
     return cheese
 }
 
 let fullSentence = favoriteCheeseStringWithCheese("cheddar")
 // Make fullSentence say "My favorite cheese is cheddar."
-
+let cheese = "cheddar"
+let newSentence = "My favorite cheese is \(cheese)."
 /*
 
 Arrays & Dictionaries
 
 */
 
-let numberArray = [1, 2, 3, 4]
+var numberArray = [1, 2, 3, 4]
+numberArray += [5]
 // Add 5 to this array
 // WORK HERE
 
-let numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
-// Add 5 : "five" to this dictionary
+var numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
+numberDictionary[5] = "five"
+
 // WORK HERE
 
 /*
@@ -35,10 +38,18 @@ Loops
 */
 
 // Use a closed range loop to print 1 - 10, inclusively
-// WORK HERE
+//for var i = 1; i <= 10; i++ {
+//    println("\(i), ")
+//}
+for number in 1...10 {
+    println("\(number), ")
+}
 
 // Use a half-closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for number in 1..<10 {
+    println("\(number), ")
+    
+}
 
 let worf = [
     "name": "Worf",
@@ -56,14 +67,21 @@ let picard = [
 let characters = [worf, picard]
 
 func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String>>) -> Array<String> {
+    var drinksArray:[String] = []
+    for nextCharacter in characters {
+        let nextFavoriteDrink = nextCharacter["favorite drink"]
+        drinksArray.append(nextFavoriteDrink!)
+        /// Extract the favorite drink here
+        println(nextCharacter)
+    }
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
-    // WORK HERE
-    return []
+    
+    return drinksArray
 }
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
 
-favoriteDrinks
+
 
 /*
 
@@ -75,7 +93,9 @@ Functions
 
 let strings = ["milk", "eggs", "bread", "challah"]
 
-// WORK HERE - make your function and pass `strings` in
+//func stringOfFoods(strings:Array<String) -> String {
+    let stringOfFoods = ";".join(strings)
+//    return stringOfFoods
 
 let expectedOutput = "milk;eggs;bread;challah"
 
@@ -86,6 +106,7 @@ Closures
 */
 
 let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All Berries", "Cookie Crisp"]
+let cerealArraySorted = sorted(cerealArray, <)
+println(cerealArraySorted)
 
-// Use a closure to sort this array alphabetically
-// WORK HERE
+
