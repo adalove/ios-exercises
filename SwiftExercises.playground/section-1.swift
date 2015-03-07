@@ -93,9 +93,9 @@ Functions
 
 let strings = ["milk", "eggs", "bread", "challah"]
 
-//func stringOfFoods(strings:Array<String) -> String {
+func stringOfFoods(strings:Array<String>) -> String {
     let stringOfFoods = ";".join(strings)
-//    return stringOfFoods
+    return stringOfFoods
 
 let expectedOutput = "milk;eggs;bread;challah"
 
