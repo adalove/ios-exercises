@@ -96,9 +96,11 @@ let strings = ["milk", "eggs", "bread", "challah"]
 func stringOfFoods(strings:Array<String>) -> String {
     let stringOfFoods = ";".join(strings)
     return stringOfFoods
+}
 
 let expectedOutput = "milk;eggs;bread;challah"
 
+stringOfFoods(strings)
 /*
 
 Closures
